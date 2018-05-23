@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 
 
 import 'normalize.css/normalize.css';
@@ -33,7 +33,7 @@ const HelpPage = () => (
 
 const NotFoundPage = () => (
     <div>
-        Error 404!
+        404 - <Link to="/">Go home</Link>
     </div>
 );
 

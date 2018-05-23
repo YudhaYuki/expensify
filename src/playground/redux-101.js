@@ -21,13 +21,15 @@ const store = createStore((state = { count: 0 }, action) => {
 
 });
 
-store.subscribe(() => {
+const unsubscribe = store.subscribe(() => {
     console.log(store.getState());
 });
 
 store.dispatch({
     type: 'INCREMENT'
 });
+
+unsubscribe();
 
 store.dispatch({
     type: 'INCREMENT'

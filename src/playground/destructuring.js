@@ -1,3 +1,4 @@
+/*
 const person = {
     name: 'Yudha',
     age: 30,
@@ -11,11 +12,26 @@ const person = {
 // const age = person.age;
 
 // Using destructring
-const {name, age} = person;
-console.log(`${name} is ${age} years old.`)
+const {name: firstName = 'Anonymous', age} = person;
+console.log(`${firstName} is ${age} years old.`)
 
-const {city, temp} = person.location;
-if (city && temp) {
-    console.log(`It's ${temp} degrees in ${city}.`);
+// const {city, temp} = person.location;
+// if (city && temp) {
+//     console.log(`It's ${temp} degrees in ${city}.`);
+// }
+
+// Ability to reNAMING
+/*
+const {city, temp: temperature} = person.location;
+if (city && temperature) {
+    console.log(`It's ${temperature} degrees in ${city}.`);
 }
+
+
+// Ability to set up default value
+const {city, temp: temperature} = person.location;
+if (city && temperature) {
+    console.log(`It's ${temperature} degrees in ${city}.`);
+}
+*/
 

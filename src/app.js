@@ -12,14 +12,19 @@ const ExpenseDashboardPage = () => (
     </div>
 );
 
+const AddExpensePage = () => (
+    <div>
+        This is from my add expense component
+    </div>
+)
+
 const routes = (
     <BrowserRouter>
         <div>
             <Route path="/" component={ExpenseDashboardPage} />
+            <Route path="/create" component={ExpenseDashboardPage} />
         </div>
     </BrowserRouter>
 );
 
 ReactDOM.render(routes, document.getElementById('app'));
-
-

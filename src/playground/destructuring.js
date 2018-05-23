@@ -3,7 +3,7 @@ const person = {
     age: 30,
     location: {
         city: 'Brussels',
-        temp: 23
+        temp: 10
     }
 }
 
@@ -12,5 +12,10 @@ const person = {
 
 // Using destructring
 const {name, age} = person;
-
 console.log(`${name} is ${age} years old.`)
+
+const {city, temp} = person.location;
+if (city && temp) {
+    console.log(`It's ${temp} degrees in ${city}.`);
+}
+

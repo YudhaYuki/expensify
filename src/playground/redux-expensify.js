@@ -106,3 +106,13 @@ const demoState = {
     }
 };
 
+const user = {
+    name: 'Yudha',
+    age: 27
+};
+
+console.log({
+    age: 28,
+    ...user,
+    location: 'Philadelphia',
+});

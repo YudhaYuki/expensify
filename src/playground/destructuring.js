@@ -1,3 +1,6 @@
+
+// OBJECT DESTRUCTURING
+
 /*
 const person = {
     name: 'Yudha',
@@ -35,7 +38,7 @@ if (city && temperature) {
 }
 */
 
-
+/*
 const book = {
     title: 'Ego is the Enemy',
     author: 'Ryan Holiday',
@@ -47,4 +50,25 @@ const book = {
 const { name : publisherName = 'Self-Published'} = book.publisher;
 
 console.log(publisherName); // Penguin, Selfpublished
+*/
 
+
+
+
+
+
+// ARRAY DESTRUCTURING
+//const address = ['Lagerestraat', 'Ghent', 'East Flamish', '195'];
+//const [street, city, state, zip] = address;
+
+// const address = [];
+
+// Set up default
+// const [, , state = 'New York'] = address;
+
+
+
+const address = ['Lagerestraat', 'Ghent', 'East Flamish', '195'];
+const [, city, state] = address;
+
+console.log(`You're in ${city} ${state}`);

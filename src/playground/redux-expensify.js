@@ -11,6 +11,7 @@ import { createStore, combineReducers } from 'redux';
 
 
 // Creating a store that has two reducers associated with it
+// Expenses Reducer
 const expensesReducerDefaultState = [];
 
 const expensesReducer = (state = expensesReducerDefaultState, action) => {
@@ -20,8 +21,16 @@ const expensesReducer = (state = expensesReducerDefaultState, action) => {
     }
 };
 
+// Filter reducer
+
+
+
 // Store creation
-const store = createStore(expensesReducer);
+const store = createStore(
+    combineReducers({
+        expenses: expensesReducer
+    }) 
+);
 console.log(store.getState());
 
 

@@ -1,11 +1,11 @@
 import { createStore } from 'redux';
 
 // Destructuring
-const add = ({ a, b }) => {
-    return a + b;
+const add = ({ a, b }, c) => {
+    return a + b + c;
 };
 
-console.log(add({ a: 1, b: 12 }));
+console.log(add({ a: 1, b: 12 }, 100));
 
 // Action Generators - function that returns action objects
 

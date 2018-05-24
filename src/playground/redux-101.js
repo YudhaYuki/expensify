@@ -1,5 +1,12 @@
 import { createStore } from 'redux';
 
+// Destructuring
+const add = ({ a, b }) => {
+    return a + b;
+};
+
+console.log(add({ a: 1, b: 12 }));
+
 // Action Generators - function that returns action objects
 
 const incrementCount = (payload = {}) => ({

@@ -66,9 +66,18 @@ console.log(publisherName); // Penguin, Selfpublished
 // Set up default
 // const [, , state = 'New York'] = address;
 
-
-
+/*
 const address = ['Lagerestraat', 'Ghent', 'East Flamish', '195'];
 const [, city, state] = address;
 
 console.log(`You're in ${city} ${state}`);
+*/
+
+
+
+// Example TWO
+const item = ['Coffee(hot)', '$3.0', '$3.5', '$3.75'];
+// const [itemName, priceForSmall, priceForMedium, priceForLarge] = item;
+const [itemName, , priceForMedium] = item;
+
+console.log(`A medium ${itemName} costs ${priceForMedium}`);

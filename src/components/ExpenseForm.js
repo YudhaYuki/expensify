@@ -13,7 +13,8 @@ export default class ExpenseForm extends React.Component {
         note: '',
         amount: '',
         createdAt: moment(),
-        calenderFocused: false
+        calenderFocused: false,
+        error: ''
     };
 
     onDescriptionChange = (e) => {
@@ -44,10 +45,22 @@ export default class ExpenseForm extends React.Component {
         this.setState(() => ({ calenderFocused: focused }));
     };
 
+    onSubmit = (e) => {
+        e.preventDefault();
+
+        if(!this.state.description || !this.state.amount) {
+            this.setState(() => ({ error: 'Please provide description and amount.' }));
+        } else {
+            this.setState(() => ({ error: ''}));
+            console.log('sumbitted !');
+        }
+    }
+
     render() {
         return (
         <div>
-            <form>
+            {this.state.error && <p>{this.state.error}</p>}
+            <form onSubmit={this.onSubmit}>
                 <input
                     type="text"
                     placeholder="description"

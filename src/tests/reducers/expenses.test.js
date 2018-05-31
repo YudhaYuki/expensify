@@ -60,4 +60,15 @@ test('should edit an expense', () => {
 });
 
 // should not edit expense if expense not found
-
+test('should not edit expense if expense not found', () => {
+    const amount = 122000;
+    const action = {
+        type: 'EDIT_EXPENSE',
+        id: '-1',
+        updates: {
+            amount
+        }
+    };
+    const state = expensesReducer(expenses, action);
+    expect(state).toEqual(expenses);
+});

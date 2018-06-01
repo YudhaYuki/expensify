@@ -44,47 +44,31 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <h1>
-           Expense List 
-</h1>,
-        Array [
-          <ExpenseListItem
-            amount={195}
-            createdAt={0}
-            description="Gum"
-            id="1"
-            note=""
+        <ExpenseListItem
+          amount={195}
+          createdAt={0}
+          description="Gum"
+          id="1"
+          note=""
 />,
-          <ExpenseListItem
-            amount={109500}
-            createdAt={-345600000}
-            description="Rent"
-            id="2"
-            note=""
+        <ExpenseListItem
+          amount={109500}
+          createdAt={-345600000}
+          description="Rent"
+          id="2"
+          note=""
 />,
-          <ExpenseListItem
-            amount={4500}
-            createdAt={345600000}
-            description="Credit Card"
-            id="3"
-            note=""
+        <ExpenseListItem
+          amount={4500}
+          createdAt={345600000}
+          description="Credit Card"
+          id="3"
+          note=""
 />,
-        ],
       ],
     },
     "ref": null,
     "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": " Expense List ",
-        },
-        "ref": null,
-        "rendered": " Expense List ",
-        "type": "h1",
-      },
       Object {
         "instance": null,
         "key": "1",
@@ -140,47 +124,31 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <h1>
-             Expense List 
-</h1>,
-          Array [
-            <ExpenseListItem
-              amount={195}
-              createdAt={0}
-              description="Gum"
-              id="1"
-              note=""
+          <ExpenseListItem
+            amount={195}
+            createdAt={0}
+            description="Gum"
+            id="1"
+            note=""
 />,
-            <ExpenseListItem
-              amount={109500}
-              createdAt={-345600000}
-              description="Rent"
-              id="2"
-              note=""
+          <ExpenseListItem
+            amount={109500}
+            createdAt={-345600000}
+            description="Rent"
+            id="2"
+            note=""
 />,
-            <ExpenseListItem
-              amount={4500}
-              createdAt={345600000}
-              description="Credit Card"
-              id="3"
-              note=""
+          <ExpenseListItem
+            amount={4500}
+            createdAt={345600000}
+            description="Credit Card"
+            id="3"
+            note=""
 />,
-          ],
         ],
       },
       "ref": null,
       "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": " Expense List ",
-          },
-          "ref": null,
-          "rendered": " Expense List ",
-          "type": "h1",
-        },
         Object {
           "instance": null,
           "key": "1",

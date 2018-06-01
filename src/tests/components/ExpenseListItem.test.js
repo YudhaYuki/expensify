@@ -2,7 +2,6 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import expenses from '../fixtures/expenses';
 import ExpenseListItem from '../../components/ExpenseListItem';
-import { ENETRESET } from 'constants';
 
 test('should render ExpenseListItem correctly', () => {
 

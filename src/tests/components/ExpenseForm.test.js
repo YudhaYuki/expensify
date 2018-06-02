@@ -40,3 +40,26 @@ test ('should set note on textarea change', () => {
     });
     expect (wrapper.state('note')).toBe(value)
 });
+
+// Should set amount if valid input
+// 23.50
+test ('should set amount if valid input', () => {
+    const value = '23.50';
+    const wrapper = shallow(<ExpenseForm />);
+    wrapper.find('input').at(1).simulate('change', {
+        target: { value }
+    });
+    expect (wrapper.state('amount')).toBe(value);
+});
+
+
+// Should not set amount if invalid value
+// 12.122
+test ('should not set amount if invalid value', () => {
+    const value = '12.122';
+    const wrapper = shallow(<ExpenseForm />);
+    wrapper.find('input').at(0).simulate('change', {
+        target: { value }
+    });
+    expect (wrapper.state('amount')).toBe('');
+});

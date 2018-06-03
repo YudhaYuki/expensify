@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import moment from 'moment';
 import { ExpenseListFilters } from '../../components/ExpenseListFilters';
 import { filters, altFilters } from '../fixtures/filters';
+import { wrap } from 'module';
 
 
 let setTextFilter, sortByDate, sortByAmount, setStartDate, setEndDate, wrapper;
@@ -35,12 +36,6 @@ test('should render ExpenseListFilters with alt data correctly', () => {
     });
     expect(wrapper).toMatchSnapshot();
 });
-
-// should handle text change
-// should sort by date
-// should sort by amount
-// should handle date changes
-// should handle date focus changes
 
 test('should handle text change', () => {
     const value = 'rent';
@@ -80,5 +75,7 @@ test('should handle date changes', () => {
 });
 
 test('should handle date focus changes', () => {
-
+    const calendarFocused = 'endDate';
+    wrapper.find('DateRangePicker').prop('onFocusChange')(calendarFocused);
+    expect(wrapper.state('calendarFocused')).toBe(calendarFocused);
 })

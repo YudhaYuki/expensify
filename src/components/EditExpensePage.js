@@ -6,15 +6,6 @@ import { editExpense, removeExpense } from '../actions/expenses';
 // Refactor EditExpensePage to be a class based component
 // Setup mapDispatchToProps editExpense and removeExpense
 
-// should render the editExpansePage
-// snapshot
-
-// should handle editExpense
-// spies
-
-// should handle removeExpense
-// spies
-
 export class EditExpensePage extends React.Component {
     onSubmit = (expense) => {
         this.props.editExpense(this.props.expense.id, expense);

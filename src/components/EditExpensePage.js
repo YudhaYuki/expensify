@@ -3,30 +3,39 @@ import { connect } from 'react-redux';
 import ExpenseForm from './ExpenseForm';
 import { editExpense, removeExpense } from '../actions/expenses';
 
-const EditExpensePage = (props) => {
-    return (
-        <div>
-            <ExpenseForm
-                expense={props.expense}
-                onSubmit={(expense) => {
-                    // disptach the action to edit the expense
-                    // Redirect to the dashboard
-                    props.dispatch(editExpense(props.expense.id, expense));
-                    props.history.push('/');
-                    // console.log('update', expense);
-                }}
-            />
+// Refactor EditExpensePage to be a class based component
+// Setup mapDispatchToProps editExpense and removeExpense
 
-            <button onClick={ () => {
-                props.dispatch(removeExpense({ id: props.expense.id }));
-                props.history.push('/');
-            }}>Remove</button>
+// should render the editExpansePage
+// snapshot
 
-        </div>
-    );
-};
+// should handle editExpense
+// spies
 
-// Remove expense via dispatch and then redirect to dashboard
+// should handle removeExpense
+// spies
+
+export class EditExpensePage extends React.Component {
+    onSubmit = (expense) => {
+        this.props.dispatch(editExpense(this.props.expense.id, expense));
+        this.props.history.push('/');
+    };
+    onRemove = () => {
+        this.props.dispatch(removeExpense({ id: this.props.expense.id }));
+        this.props.history.push('/');
+    };
+    render() {
+        return (
+            <div>
+                <ExpenseForm
+                    expense={this.props.expense}
+                    onSubmit={this.onSubmit}
+                />
+                <button onClick={this.onRemove}>Remove</button>
+            </div>
+        );
+    }
+}
 
 const mapStateToProps = (state, props) => {
     return {

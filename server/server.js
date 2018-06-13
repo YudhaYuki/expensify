@@ -5,6 +5,9 @@ const express = require('express');
 const app = express();
 const publicPath = path.join(__dirname, '..', 'public');
 
+// Heroku
+const port = process.env.PORT || 3000;
+
 // We tell server to use the public directory to serve up all of our static assets
 app.use(express.static(publicPath));
 
@@ -14,6 +17,6 @@ app.get('*', (req, res) => {
 });
 
 // We told it to start up on port 3000
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Server is up!');
 });

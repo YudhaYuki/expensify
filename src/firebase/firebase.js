@@ -11,7 +11,25 @@ var config = {
 
 firebase.initializeApp(config);
 
+const database = firebase.database();
+
 // test our connection
-firebase.database().ref().set({
-    name: 'Yudha Yuki'
+database.ref().set({
+    name: 'Yudha Yuki',
+    age: 27,
+    isSingle: true,
+    location: {
+        city: 'Leiden',
+        country: 'The Netherlands'
+    }
+});
+
+// database.ref().set('This is my data.');
+
+database.ref('age').set(27);
+database.ref('location/city').set('Brussels');
+
+database.ref('attributes').set({
+        height: 174,
+        weight: 64
 });

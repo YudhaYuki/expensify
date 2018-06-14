@@ -13,24 +13,34 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
+database.ref()
+    .once('value')
+    .then((snapshot) => {
+        const val = snapshot.val();
+        console.log(val);
+    })
+    .catch((e) => {
+        console.log('Error fetching data', e);
+    });
+
 // test our connection
-database.ref().set({
-    name: 'Yudha Yuki',
-    age: 27,
-    stressLevel: 6,
-    job: {
-        title: 'Software developer',
-        company: 'Google'
-    },
-    location: {
-        city: 'Leiden',
-        country: 'The Netherlands'
-    }
-}).then(() => {
-    console.log('Data is saved!');
-}).catch((e) => {
-    console.log('This failed.', e);
-});
+// database.ref().set({
+//     name: 'Yudha Yuki',
+//     age: 27,
+//     stressLevel: 6,
+//     job: {
+//         title: 'Software developer',
+//         company: 'Google'
+//     },
+//     location: {
+//         city: 'Leiden',
+//         country: 'The Netherlands'
+//     }
+// }).then(() => {
+//     console.log('Data is saved!');
+// }).catch((e) => {
+//     console.log('This failed.', e);
+// });
 
 // database.ref('isSingle').set(null);
 
@@ -68,8 +78,8 @@ database.ref().set({
 // });
 
 
-database.ref().update({
-    stressLevel: 9,
-    'job/company': 'Amazon',
-    'location/city': 'Seattle'
-});
+// database.ref().update({
+//     stressLevel: 9,
+//     'job/company': 'Amazon',
+//     'location/city': 'Seattle'
+// });

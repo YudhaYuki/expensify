@@ -28,18 +28,23 @@ database.ref().set({
     console.log('This failed.', e);
 });
 
-// database.ref().set('This is my data.');
+database.ref('isSingle').set(null);
 
-database.ref('age').set(27);
-database.ref('location/city').set('Brussels');
+// Delete an attribute
+// database.ref('isSingle')
+//     .remove()
+//     .then(() => {
+//         console.log('Data was removed');
+//     }).catch((e) => {
+//         console.log('did not remove data', e);
+//     });
 
-database.ref('attributes').set({
-        height: 174,
-        weight: 64
-}).then(() => {
-    console.log('Second set call worked!');
-}).catch((e) => {
-    console.log('Thing did not work for the second error.', e);
-});
 
-// console.log('I made a request to change the data !');
+// Delete whole data
+// database.ref()
+//     .remove()
+//     .then(() => {
+//         console.log('Data was removed');
+//     }).catch((e) => {
+//         console.log('did not remove data', e);
+//     });

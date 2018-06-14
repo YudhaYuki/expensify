@@ -16,4 +16,11 @@ promise.then((data) => {
     console.log('error: ', error);
 });
 
+// Another promise attributes instead of using catch
+// promise.then((data) => {
+//     console.log('1', data);
+// }, (error) => {
+//     console.log('error: ', error);
+// });
+
 console.log('after');

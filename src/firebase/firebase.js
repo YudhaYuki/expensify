@@ -22,6 +22,10 @@ database.ref().set({
         city: 'Leiden',
         country: 'The Netherlands'
     }
+}).then(() => {
+    console.log('Data is saved!');
+}).catch((e) => {
+    console.log('This failed.', e);
 });
 
 // database.ref().set('This is my data.');
@@ -33,3 +37,5 @@ database.ref('attributes').set({
         height: 174,
         weight: 64
 });
+
+console.log('I made a request to change the data !');

@@ -17,7 +17,11 @@ const database = firebase.database();
 database.ref().set({
     name: 'Yudha Yuki',
     age: 27,
-    isSingle: true,
+    stressLevel: 6,
+    job: {
+        title: 'Software developer',
+        company: 'Google'
+    },
     location: {
         city: 'Leiden',
         country: 'The Netherlands'
@@ -28,7 +32,7 @@ database.ref().set({
     console.log('This failed.', e);
 });
 
-database.ref('isSingle').set(null);
+// database.ref('isSingle').set(null);
 
 // Delete an attribute
 // database.ref('isSingle')
@@ -48,3 +52,24 @@ database.ref('isSingle').set(null);
 //     }).catch((e) => {
 //         console.log('did not remove data', e);
 //     });
+
+
+// database.ref().update({
+//     name: 'Yuki',
+//     age: 27,
+//     job: 'Web developer',
+//     isSingle: null
+// });
+
+
+// database.ref().update({
+//     job: 'Manager',
+//     'location/city': 'Boston'
+// });
+
+
+database.ref().update({
+    stressLevel: 9,
+    'job/company': 'Amazon',
+    'location/city': 'Seattle'
+});
